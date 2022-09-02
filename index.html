@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+  <label for="filtrar-tabela">Filtre sua busca:</label>
+  <input type="text" name="filtrar-tabela" placeholder="Digite o nome do paciente" id="filtrar-tabela">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">nome</th>
+            <th scope="col">peso</th>
+            <th scope="col">altura</th>
+            <th scope="col">gordura</th>
+            <th scope="col">imc</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <div id='errors'style="margin-top:125px; width: 50%; margin-left: auto; margin-right: auto">
+        <h1 id="erro"></h1>
+        <h1>Adicionar Paciente</h1>
+        <form id='form' action="">
+          <div class="form" style="display: flex; flex-direction: column; gap: 60px; width: 60%; margin-left: auto; margin-right: auto">
+      
+            <div class="col">
+              <input type="text" id='inputName' class="form-control" placeholder="Nome">
+            </div>
+            <div class="col">
+              <input type="text" id='inputWeight' class="form-control" placeholder="Peso">
+            </div>
+            <div class="col">
+              <input type="text" id='inputHeight' class="form-control" placeholder="Altura">
+            </div>
+            <div class="col">
+              <input type="text" id='inputFat' class="form-control" placeholder="Gordura">
+            </div>
+          </div>
+          <button id='buttonForm' type="submit" style="margin-top:5rem" class="btn btn-primary btn-lg">Adicionar</button>
+          </form>
+      </div>
+      <div class="w3-container">
+        <div id="id01" class="w3-modal">
+          <div class="w3-modal-content">
+            <header class="w3-container w3-teal"> 
+              <span onclick="document.getElementById('id01').style.display='none'" 
+              class="w3-button w3-display-topright">&times;</span>
+              <h2>Modificações</h2>
+            </header>
+            <div class="w3-container">
+              <p>Some text..</p>
+              <button type="button" class="btn btn-danger">Apagar</button>
+            </div>
+            <footer class="w3-container w3-teal">
+              <p></p>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
