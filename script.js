@@ -10,6 +10,8 @@ let form = document.getElementById('form')
 const buttonForm = document.getElementById('buttonForm')
 const table = document.querySelector('.table')
 const filter = document.getElementById('filtrar-tabela')
+const eraseButton = document.getElementById('apagar')
+let modal = document.getElementById('id01')
 
 buttonForm.addEventListener('click',(event)=>{
     event.preventDefault()
@@ -32,21 +34,30 @@ const calcularImc = (altura, peso) => {
 }
 
 
-const removePacient = ((event) =>{
+const decisions = ((event) =>{
     alvo = event.target
-    let modal = document.getElementById('id01')
+    var paiDoAlvo = alvo.parentNode
     modal.style.display='block'
+
+    modal.addEventListener('click', (event)=>{
+        if(event.target == modal){
+            modal.style.display='none'
+        }
+    })
+    return paiDoAlvo
+})
+table.addEventListener('dblclick', decisions)
+
+const erasePaciente= ((event) =>{
     paiDoAlvo = alvo.parentNode;
     paiDoAlvo.classList.add('FadeOut')
     setTimeout(()=>{
         paiDoAlvo.remove()
     },500)
-    if(event.target)
-    modal.addEventListener('click', (event)=>{
-        modal.style.display='none'
-    })
+    modal.style.display='none'
 })
-table.addEventListener('dblclick', removePacient)
+
+eraseButton.addEventListener('click', erasePaciente)
 
 // api getting data
 const getApi = new Promise((resolve, reject) =>{
